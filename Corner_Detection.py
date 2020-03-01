@@ -44,7 +44,7 @@ def CornerDetection(data):
     Scount=0
     Hcount=0
     Sthreshold=50000
-    k=0.03
+    k=0.03  #Suggested k value in many papers.
 
     (data_height,data_width)=data.shape[:2]
     window_h=window_w=1
@@ -75,12 +75,7 @@ def CornerDetection(data):
     im.fromarray(imgs).show()
     im.fromarray(imgh).show()
     print("Shi-Tomasi Corners : "+str(Scount)+" , "+"Harris Corners : "+str(Hcount))
-im_1 = im.open(r"C:\Users\Dheeraj\Desktop\HW1_Q2\Image1.jpg")
+
+im_1 = im.open(r"C:\Users\Dheeraj\Desktop\HW1_Q2\Image1.jpg")     #image file path
 data_1=np.array(im_1)
 CornerDetection(data_1)
-im_2 = im.open(r"C:\Users\Dheeraj\Desktop\HW1_Q2\Image2.jpg")
-data_2=np.array(im_2)
-CornerDetection(data_2)
-im_3 = im.open(r"C:\Users\Dheeraj\Desktop\HW1_Q2\Image3.jpg")
-data_3=np.array(im_3)
-CornerDetection(data_3)
